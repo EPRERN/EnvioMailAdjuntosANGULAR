@@ -1,0 +1,29 @@
+<div>
+  <h2>Formulario de contacto</h2>
+  <form (ngSubmit)="enviarFormulario()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="formData.nombre" name="nombre" required><br><br>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" [(ngModel)]="formData.apellido" name="apellido" required><br><br>
+
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" [(ngModel)]="formData.dni" name="dni" required><br><br>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" [(ngModel)]="formData.telefono" name="telefono" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="formData.email" name="email" required><br><br>
+
+    <label for="descripcion">Descripción:</label><br>
+    <textarea id="descripcion" [(ngModel)]="formData.descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="archivos">Adjuntos:</label>
+    <input type="file" id="archivos" (change)="handleFileInput($event)" multiple><br><br>
+    
+    <p style="color: red;" [innerHTML]="errorMessage"></p>
+    
+    <button type="submit" [disabled]="isButtonDisabled">Enviar</button>
+  </form>
+</div>
